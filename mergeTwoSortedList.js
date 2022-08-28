@@ -6,9 +6,10 @@ const mergeTwoLists = function(list1, list2) {
     mergedArray.push(i);
   };
 
-  list2.forEach(number => mergedArray.push(number));
+  for (let j=0; j < list2.length; j++) {
+    mergedArray.push(j);
+  };
 
   return mergedArray.sort((a,b) => a-b)
-  
 
 };
