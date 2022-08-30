@@ -1,6 +1,8 @@
 const mergeTwoLists = function(list1, list2) {
 
-  mergedArray = [];
+  let mergedArray = [];
+
+  console.log('mergedArray', mergedArray);
 
   for (let i=0; i < list1.length; i++) {
     mergedArray.push(i);
@@ -10,6 +12,6 @@ const mergeTwoLists = function(list1, list2) {
     mergedArray.push(j);
   };
 
-  return mergedArray.sort((a,b) => a-b)
+  return mergedArray;
 
 };
