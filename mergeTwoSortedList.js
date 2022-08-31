@@ -1,27 +1,19 @@
-const mergeTwoLists = function(list1, list2) {
+const mergeTwoLists = function(l1, l2) {
 
-  let l3 = new listNode(-1) //we create a new 0kedlist with the initial value of -1
-  let merged = l3
+  if (!l1) {
+    return l2;
+  }
+  if (!l2) {
+    return l1;
+  }
+  if (l1.val < l2.val) {
 
-  while (l1 || l2) {
-
-    if (l2 === null || (l1 !== null && l1.value <= l2.value) ) {
-
-      l3.next = l1; //the first value of l3 would be the initial l1 value
-      l3 = l3.next; //move one position inside the linkedlist object to se the value for the next loop.
-      l1 = l1.next; //now we remove that value from l1 to go ahead with appendiong the linkedlist
-
-    } else {
-
-      l3.next = l2;
-      l3 = l3.next;
-      l2 = l2.next
-
-
-    }
+    l1.next = mergeTwoLists(l1.next, l2);
+    return l1;
 
   }
 
-  return merged.next;
+    l2.next = mergeTwoLists(l2.next, l1);
+    return l2;
 
 };
